@@ -17,7 +17,10 @@ public class CrudDemoApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
-		return runner -> createInstructor(appDAO);
+		return runner -> {
+//			createInstructor(appDAO);
+			findInstructor(appDAO);
+		};
 	}
 
 	private void createInstructor(AppDAO appDAO) {
@@ -36,5 +39,12 @@ public class CrudDemoApplication {
 		System.out.println("Saving instructor: " + instructor);
 		appDAO.save(instructor);
 		System.out.println("Done saving.");
+	}
+
+	private void findInstructor(AppDAO appDAO) {
+		final Instructor instructor = appDAO.findById(1);
+		final InstructorDetail instructorDetail = instructor.getInstructorDetail();
+		System.out.println("Found instructor: " + instructor);
+		System.out.println("Found instructor detail: " + instructorDetail);
 	}
 }

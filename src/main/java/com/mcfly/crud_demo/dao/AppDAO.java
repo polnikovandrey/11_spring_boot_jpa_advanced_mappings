@@ -5,4 +5,6 @@ import com.mcfly.crud_demo.entity.Instructor;
 public interface AppDAO {
 
     void save(Instructor instructor);
+
+    Instructor findById(int id);
 }
