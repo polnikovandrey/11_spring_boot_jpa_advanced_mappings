@@ -21,11 +21,18 @@ public class CrudDemoApplication {
 	}
 
 	private void createInstructor(AppDAO appDAO) {
+//		final Instructor instructor
+//				= new Instructor("Chad", "Darby", "darby@luv2code.com");
+//		final InstructorDetail instructorDetail
+//				= new InstructorDetail("https://www.luv2code.com/youtube", "Luv 2 code!!!");
+//		instructor.setInstructorDetail(instructorDetail);
+
 		final Instructor instructor
-				= new Instructor("Chad", "Darby", "darby@luv2code.com");
+				= new Instructor("Mahdu", "Patel", "madhu@luv2code.com");
 		final InstructorDetail instructorDetail
-				= new InstructorDetail("https://www.luv2code.com/youtube", "Luv 2 code!!!");
+				= new InstructorDetail("https://www.luv2code.com/youtube", "Guitar");
 		instructor.setInstructorDetail(instructorDetail);
+
 		System.out.println("Saving instructor: " + instructor);
 		appDAO.save(instructor);
 		System.out.println("Done saving.");
